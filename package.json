@@ -1,0 +1,12 @@
+{
+  "name": "pseudocoding",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compare": "tsx part-c/compare.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

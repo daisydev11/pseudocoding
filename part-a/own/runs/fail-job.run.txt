@@ -1,0 +1,12 @@
+Input 1 (normal: attempt 2 of 5 fails)
+  returned: "failed"
+  job row:  status=FAILED attempts=2 lockedBy=null lastError="Provider timeout" finishedAt=empty runAt=now+3.1s
+  attempt log: #1 by w1: outcome=failed nextDelayMs=null | #2 by w1: outcome=failed nextDelayMs=2500
+Input 2 (edge: attempt 5 of 5 fails)
+  returned: "dead"
+  job row:  status=DEAD attempts=5 lockedBy=null lastError="Provider timeout" finishedAt=set runAt=unchanged (past)
+  attempt log: #5 by w1: outcome=failed nextDelayMs=null
+Input 3 (invalid: w1 reports a failure for a job w2 now holds)
+  returned: "failed"
+  job row:  status=PROCESSING attempts=3 lockedBy=w2 lastError=null finishedAt=empty runAt=unchanged (past)
+  attempt log: #2 by w1: outcome=failed nextDelayMs=2500 | #3 by w2: outcome=null nextDelayMs=null

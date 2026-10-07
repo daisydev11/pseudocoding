@@ -1,0 +1,6 @@
+Input 1 (normal: monthly -> yearly on day 12)
+  output: {"ok":true,"interval":"YEARLY","currency":"NGN","listPriceMinor":5000000,"kind":"UPGRADE","creditMinor":316666,"amountMinor":4683334,"proration":[{"reference":"pay_1","valueMinor":500000,"spanDays":30,"unusedDays":19,"creditMinor":316666}]}
+Input 2 (edge: expired monthly buys monthly)
+  output: {"ok":true,"interval":"MONTHLY","currency":"NGN","listPriceMinor":500000,"kind":"SUBSCRIBE","creditMinor":0,"amountMinor":500000,"proration":[]}
+Input 3 (invalid: already monthly, asks monthly)
+  output: {"ok":false,"code":"ALREADY_ON_PLAN","message":"You are already on the monthly plan."}

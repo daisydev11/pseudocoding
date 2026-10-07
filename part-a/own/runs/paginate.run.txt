@@ -1,0 +1,16 @@
+Input 1 (normal)
+  input:  {"limit":2}
+  output: {"data":["r1","r2"],"meta":{"total":5,"limit":2,"offset":0,"hasMore":true,"nextCursor":"r2"}}
+  database calls: count, findMany
+Input 2 (edge: last page by cursor)
+  input:  {"limit":2,"cursor":"r4"}
+  output: {"data":["r5"],"meta":{"total":5,"limit":2,"offset":null,"hasMore":false,"nextCursor":null}}
+  database calls: exists, count, findMany
+Input 3 (invalid cursor)
+  input:  {"limit":2,"cursor":"nope"}
+  output: {"threw":"400 INVALID_CURSOR"}
+  database calls: exists
+Input 4 (edge: offset past the end)
+  input:  {"limit":2,"offset":100}
+  output: {"data":[],"meta":{"total":5,"limit":2,"offset":100,"hasMore":false,"nextCursor":null}}
+  database calls: count, findMany
